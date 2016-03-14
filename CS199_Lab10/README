@@ -1,0 +1,68 @@
+Giovanni Rosati
+OSU ID# 932510038
+rosatig@oregonstate.edu
+
+March 6, 2016
+Lab 10 README
+CS_199_400_W2016
+
+
+The program can be compiled by typing "make all" and an executable file named “prog” will be created in the same directory. 
+
+Typing "make clean" will remove the prog file.
+
+This program allows the user to compare the time required to either:
+do binary searches using iterative vs. rescursive algorithms
+	or 
+calculate factorials with iterative vs. recursive algorithms
+
+
+In final testing on FLIP I had the following results:
+
+Binary Search Results
+								Iteration			Recursion
+Array Size		# Searches		Time Required		Time Required		NOTES
+100,000,000		100,000,000		102.62 seconds		120.72 seconds		Recursive was 20% slower
+ 10,000,000		 10,000,000		  6.32 seconds		  7.67 seconts		Recursive was 21% slower
+  1,000,000		  1,000,000		  0.25 seconds		  0.36 seconds		Recursive was 44% slower
+    100,000		    100,000		  0.03 seonds		  0.03 seconds		No difference
+
+100,000,000		  1,000,000		  1.02 seconds		  1.20 seconds		Recursive about 20% slower
+  1,000,000		100,000,000		 24.57 seconds		 35.48 seconds		Recursive about 44% slower
+
+
+Factorial Calculation Results
+
+Number of		Iteration		Recursion
+Factorials		Time Required	Time Required
+1,000,000,000	42.51 seconds	42.51 seconds
+  100,000,000	 4.22 seconds	 4.22 seconds
+   10,000,000	 0.42 seconds	 0.42 seconds
+    1,000,000	 0.05 seconds	 0.05 seconds
+
+
+
+Analysis of Results
+
+Given a large enough number of searches and/or array size,  
+binary searches using recursion are 20-40% slower than than those using iteration.
+
+By testing different combinations of array size and number of searches my tests show
+that the number of searches has a greater impact on the time difference than does 
+the size of the array. I would assume this is primarily due to the fact that a 
+binary search is always reducing the elements to be searched by 1/2. So during 
+the search itelf each successive loop initially decreases by very large numbers
+if starting with very large numbers. With an array of 100,000,000 elements, after
+the first loop the new size to search is 50,000,000, the next is only 25,000,000,
+the next 12,500,000, and so on. The size very quickely approaches zero. Whereas
+with the number of searches it is a linear relationship because each search takes
+on average as any other search so the total time is just the sum of all those search times.
+
+
+I did not discover any difference between calculating a factorial using 
+a recursive function vs. an iterative function. I assume this is because
+this problem is just repeated simple multiplication. Assuming the stack 
+is large enough, whether the multiplication is done sequently as many 
+individual multiplications, or by "stacking" them up in reverse order
+it doesn't make much difference.
+

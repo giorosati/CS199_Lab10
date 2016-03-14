@@ -21,5 +21,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="makefile" />
+    <None Include="README" />
   </ItemGroup>
 </Project>
