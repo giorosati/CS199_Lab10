@@ -109,7 +109,11 @@ int main() {
 				}
 			}
 			//iterative binary search
-			cout << "Now running iterative and recursive binary searches..." << endl;
+			cout << endl;
+			cout << endl;
+			cout << "Beginning tests." << endl;
+			cout << "Now running iterative binary searches...please wait..." << endl;
+
 			t1 = clock();	//get starting time
 			for (int i = 0; i < loops; i++)
 			{
@@ -124,6 +128,7 @@ int main() {
 			cout << endl;
 
 			//recursive binary search
+			cout << "Now running recursive binary searches...please wait..." << endl;
 			t2 = clock();
 			for (int i = 0; i < loops; i++)
 			{
@@ -136,7 +141,10 @@ int main() {
 			cout << "It took " << addCommas(t2) << " clicks (" << setprecision(9) << ((float)t2) / CLOCKS_PER_SEC << " seconds)." << endl;
 			cout << "to run " << addCommas(loops) << " recursive binary search(es)." << endl;
 			cout << endl;
-
+			cout << endl;
+			cout << "Tests complete." << endl;
+			cout << endl;
+			cout << endl;
 			//delete the array
 			//delete[] intArray;
 		}
